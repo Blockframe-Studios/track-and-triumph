@@ -1,8 +1,4 @@
 {
-  "itemGroup.trackandtriumph": "Example Mod Tab",
-  "block.trackandtriumph.example_block": "Example Block",
-  "item.trackandtriumph.example_item": "Example Item",
-
   "trackandtriumph.configuration.title": "Example Mod Configs",
   "trackandtriumph.configuration.section.trackandtriumph.common.toml": "Example Mod Configs",
   "trackandtriumph.configuration.section.trackandtriumph.common.toml.title": "Example Mod Configs",
