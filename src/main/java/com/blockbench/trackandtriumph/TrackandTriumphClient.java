@@ -6,6 +6,9 @@ import com.blockbench.trackandtriumph.entities.TTEntities;
 import com.blockbench.trackandtriumph.entities.animals.TTAnimal;
 
 import com.blockbench.trackandtriumph.client.TTAnimalModel;
+import com.blockbench.trackandtriumph.client.TTKeyMappings;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -50,6 +53,16 @@ public class TrackandTriumphClient {
     // Assets are looked up by registry name (plus _baby for babies): geo/entity/<id>.geo.json, animations/entity/<id>.animation.json, textures/entity/<id>.png
     private static <T extends TTAnimal> void registerGeoRenderer(EntityRenderersEvent.RegisterRenderers event, Supplier<EntityType<T>> type) {
         event.registerEntityRenderer(type.get(), context -> new GeoEntityRenderer<>(context, new TTAnimalModel<>(BuiltInRegistries.ENTITY_TYPE.getKey(type.get()))));
+    }
+
+    @SubscribeEvent
+    static void registerKeyMappings(RegisterKeyMappingsEvent event) {
+        TTKeyMappings.register(event);
+    }
+
+    @SubscribeEvent
+    static void onClientTick(ClientTickEvent.Post event) {
+        TTKeyMappings.onClientTick(event);
     }
 
     @SubscribeEvent

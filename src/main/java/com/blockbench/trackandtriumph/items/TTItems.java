@@ -2,6 +2,8 @@ package com.blockbench.trackandtriumph.items;
 
 import com.blockbench.trackandtriumph.TrackandTriumph;
 import com.blockbench.trackandtriumph.entities.TTEntities;
+import com.blockbench.trackandtriumph.items.weapons.HuntingRifleItem;
+import com.blockbench.trackandtriumph.items.weapons.RifleMagazineItem;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -29,7 +31,8 @@ public class TTItems {
     public static final DeferredItem<Item> GAME_CALL = ITEMS.registerSimpleItem("game_call", p -> p.stacksTo(1));
     public static final DeferredItem<Item> HUNTING_BOW = ITEMS.registerSimpleItem("hunting_bow", p -> p.stacksTo(1));
     public static final DeferredItem<Item> HUNTING_KNIFE = ITEMS.registerSimpleItem("hunting_knife", p -> p.stacksTo(1));
-    public static final DeferredItem<Item> HUNTING_RIFLE = ITEMS.registerSimpleItem("hunting_rifle", p -> p.stacksTo(1));
+    public static final DeferredItem<Item> HUNTING_RIFLE = ITEMS.registerItem("hunting_rifle", HuntingRifleItem::new, p -> p.stacksTo(1));
+    public static final DeferredItem<Item> RIFLE_MAGAZINE = ITEMS.registerItem("rifle_magazine", RifleMagazineItem::new, p -> p.stacksTo(1));
     public static final DeferredItem<Item> LION_PELT = ITEMS.registerSimpleItem("lion_pelt");
     public static final DeferredItem<Item> MOOSE_ANTLERS = ITEMS.registerSimpleItem("moose_antlers");
     public static final DeferredItem<Item> RAW_BEAR_MEAT = ITEMS.registerSimpleItem("raw_bear_meat", p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).build()));

@@ -23,6 +23,7 @@
   "item.trackandtriumph.raw_boar_meat": "Raw Boar Meat",
   "item.trackandtriumph.raw_venison": "Raw Venison",
   "item.trackandtriumph.rhino_horn": "Rhino Horn",
+  "item.trackandtriumph.rifle_magazine": "Rifle Magazine",
   "item.trackandtriumph.rifle_round": "Rifle Round",
   "item.trackandtriumph.tiger_pelt": "Tiger Pelt",
   "item.trackandtriumph.venison_jerky": "Venison Jerky",
@@ -52,5 +53,15 @@
   "item.trackandtriumph.lion_spawn_egg": "Lion Spawn Egg",
   "item.trackandtriumph.moose_spawn_egg": "Moose Spawn Egg",
   "item.trackandtriumph.rhino_spawn_egg": "Rhino Spawn Egg",
-  "item.trackandtriumph.tiger_spawn_egg": "Tiger Spawn Egg"
+  "item.trackandtriumph.tiger_spawn_egg": "Tiger Spawn Egg",
+
+  "key.category.trackandtriumph.rifle": "Track and Triumph: Rifle",
+  "key.trackandtriumph.reload_rifle": "Reload Rifle (swap in a loaded magazine)",
+  "key.trackandtriumph.load_magazine": "Load Magazine (fill from rifle rounds)",
+
+  "message.trackandtriumph.rifle.no_rifle": "You need to hold a hunting rifle",
+  "message.trackandtriumph.rifle.no_magazine": "No loaded magazine in your inventory",
+  "message.trackandtriumph.rifle.no_better_magazine": "No fuller magazine in your inventory",
+  "message.trackandtriumph.rifle.no_magazine_to_fill": "No magazine to fill",
+  "message.trackandtriumph.rifle.no_rounds": "No rifle rounds in your inventory"
 }

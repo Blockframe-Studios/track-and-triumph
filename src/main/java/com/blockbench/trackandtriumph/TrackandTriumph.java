@@ -5,7 +5,9 @@ import org.slf4j.Logger;
 import com.blockbench.trackandtriumph.entities.TTEntities;
 import com.blockbench.trackandtriumph.entities.animals.*;
 import com.blockbench.trackandtriumph.items.TTCreativeTabs;
+import com.blockbench.trackandtriumph.items.TTDataComponents;
 import com.blockbench.trackandtriumph.items.TTItems;
+import com.blockbench.trackandtriumph.network.TTNetworking;
 
 import com.mojang.logging.LogUtils;
 
@@ -42,10 +44,12 @@ public class TrackandTriumph {
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
+        TTDataComponents.register(modEventBus);
         TTItems.register(modEventBus);
         TTCreativeTabs.register(modEventBus);
         TTEntities.register(modEventBus);
         modEventBus.addListener(this::registerEntityAttributes);
+        modEventBus.addListener(TTNetworking::registerPayloads);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (TrackandTriumph) to respond directly to events.

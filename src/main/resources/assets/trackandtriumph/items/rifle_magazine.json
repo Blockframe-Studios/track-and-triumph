@@ -1,0 +1,48 @@
+{
+ "model": {
+  "type": "minecraft:select",
+  "property": "minecraft:component",
+  "component": "trackandtriumph:rounds",
+  "cases": [
+   {
+    "when": 1,
+    "model": {
+     "type": "minecraft:model",
+     "model": "trackandtriumph:item/rifle_magazine_1"
+    }
+   },
+   {
+    "when": 2,
+    "model": {
+     "type": "minecraft:model",
+     "model": "trackandtriumph:item/rifle_magazine_2"
+    }
+   },
+   {
+    "when": 3,
+    "model": {
+     "type": "minecraft:model",
+     "model": "trackandtriumph:item/rifle_magazine_3"
+    }
+   },
+   {
+    "when": 4,
+    "model": {
+     "type": "minecraft:model",
+     "model": "trackandtriumph:item/rifle_magazine_4"
+    }
+   },
+   {
+    "when": 5,
+    "model": {
+     "type": "minecraft:model",
+     "model": "trackandtriumph:item/rifle_magazine_5"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:model",
+   "model": "trackandtriumph:item/rifle_magazine_0"
+  }
+ }
+}

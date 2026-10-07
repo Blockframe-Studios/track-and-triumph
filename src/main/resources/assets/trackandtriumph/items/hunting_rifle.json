@@ -1,6 +1,32 @@
 {
  "model": {
-  "type": "minecraft:model",
-  "model": "trackandtriumph:item/hunting_rifle"
+  "type": "minecraft:select",
+  "property": "minecraft:display_context",
+  "cases": [
+   {
+    "when": [
+     "gui",
+     "ground",
+     "fixed"
+    ],
+    "model": {
+     "type": "minecraft:model",
+     "model": "trackandtriumph:item/hunting_rifle"
+    }
+   }
+  ],
+  "fallback": {
+   "type": "minecraft:condition",
+   "property": "minecraft:has_component",
+   "component": "trackandtriumph:rounds",
+   "on_true": {
+    "type": "minecraft:model",
+    "model": "trackandtriumph:item/hunting_rifle_3d"
+   },
+   "on_false": {
+    "type": "minecraft:model",
+    "model": "trackandtriumph:item/hunting_rifle_3d_no_mag"
+   }
+  }
  }
 }
