@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.blockbench.trackandtriumph.items.TTDataComponents;
 import com.blockbench.trackandtriumph.items.TTItems;
+import com.blockbench.trackandtriumph.sounds.TTSounds;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -82,7 +83,7 @@ public final class RifleActions {
             return;
         }
         target.set(TTDataComponents.ROUNDS, rounds + loaded);
-        sound(player, true);
+        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), TTSounds.RIFLE_RELOAD.value(), SoundSource.PLAYERS, 1.0F, 1.0F);
     }
 
     private static ItemStack findMagazineToFill(ServerPlayer player) {

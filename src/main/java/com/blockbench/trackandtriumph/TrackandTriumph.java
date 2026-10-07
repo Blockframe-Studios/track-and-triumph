@@ -8,6 +8,7 @@ import com.blockbench.trackandtriumph.items.TTCreativeTabs;
 import com.blockbench.trackandtriumph.items.TTDataComponents;
 import com.blockbench.trackandtriumph.items.TTItems;
 import com.blockbench.trackandtriumph.network.TTNetworking;
+import com.blockbench.trackandtriumph.sounds.TTSounds;
 
 import com.mojang.logging.LogUtils;
 
@@ -45,6 +46,7 @@ public class TrackandTriumph {
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
         TTDataComponents.register(modEventBus);
+        TTSounds.register(modEventBus);
         TTItems.register(modEventBus);
         TTCreativeTabs.register(modEventBus);
         TTEntities.register(modEventBus);

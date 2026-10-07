@@ -1,0 +1,43 @@
+{
+ "rifle.shoot": {
+  "subtitle": "subtitles.trackandtriumph.rifle.shoot",
+  "sounds": [
+   {
+    "name": "trackandtriumph:rifle/shoot",
+    "attenuation_distance": 96
+   }
+  ]
+ },
+ "rifle.empty": {
+  "subtitle": "subtitles.trackandtriumph.rifle.empty",
+  "sounds": [
+   {
+    "name": "trackandtriumph:rifle/empty"
+   }
+  ]
+ },
+ "rifle.bolt_pullback": {
+  "subtitle": "subtitles.trackandtriumph.rifle.bolt_pullback",
+  "sounds": [
+   {
+    "name": "trackandtriumph:rifle/bolt_pullback"
+   }
+  ]
+ },
+ "rifle.bolt_close": {
+  "subtitle": "subtitles.trackandtriumph.rifle.bolt_close",
+  "sounds": [
+   {
+    "name": "trackandtriumph:rifle/bolt_close"
+   }
+  ]
+ },
+ "rifle.reload": {
+  "subtitle": "subtitles.trackandtriumph.rifle.reload",
+  "sounds": [
+   {
+    "name": "trackandtriumph:rifle/reload"
+   }
+  ]
+ }
+}

@@ -59,9 +59,15 @@
   "key.trackandtriumph.reload_rifle": "Reload Rifle (swap in a loaded magazine)",
   "key.trackandtriumph.load_magazine": "Load Magazine (fill from rifle rounds)",
 
+  "subtitles.trackandtriumph.rifle.shoot": "Rifle fires",
+  "subtitles.trackandtriumph.rifle.empty": "Rifle clicks empty",
+  "subtitles.trackandtriumph.rifle.bolt_pullback": "Rifle bolt pulled back",
+  "subtitles.trackandtriumph.rifle.bolt_close": "Rifle bolt closes",
+  "subtitles.trackandtriumph.rifle.reload": "Rifle reloads",
+
   "message.trackandtriumph.rifle.no_rifle": "You need to hold a hunting rifle",
   "message.trackandtriumph.rifle.no_magazine": "No loaded magazine in your inventory",
-  "message.trackandtriumph.rifle.no_better_magazine": "No fuller magazine in your inventory",
+  "message.trackandtriumph.rifle.no_better_magazine": "No magazine in your inventory",
   "message.trackandtriumph.rifle.no_magazine_to_fill": "No magazine to fill",
   "message.trackandtriumph.rifle.no_rounds": "No rifle rounds in your inventory"
 }

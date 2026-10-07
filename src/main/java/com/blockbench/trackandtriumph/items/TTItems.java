@@ -5,9 +5,11 @@ import com.blockbench.trackandtriumph.entities.TTEntities;
 import com.blockbench.trackandtriumph.items.weapons.HuntingRifleItem;
 import com.blockbench.trackandtriumph.items.weapons.RifleMagazineItem;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.component.UseEffects;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -31,7 +33,8 @@ public class TTItems {
     public static final DeferredItem<Item> GAME_CALL = ITEMS.registerSimpleItem("game_call", p -> p.stacksTo(1));
     public static final DeferredItem<Item> HUNTING_BOW = ITEMS.registerSimpleItem("hunting_bow", p -> p.stacksTo(1));
     public static final DeferredItem<Item> HUNTING_KNIFE = ITEMS.registerSimpleItem("hunting_knife", p -> p.stacksTo(1));
-    public static final DeferredItem<Item> HUNTING_RIFLE = ITEMS.registerItem("hunting_rifle", HuntingRifleItem::new, p -> p.stacksTo(1));
+    public static final DeferredItem<Item> HUNTING_RIFLE = ITEMS.registerItem("hunting_rifle", HuntingRifleItem::new,
+            p -> p.stacksTo(1).component(DataComponents.USE_EFFECTS, new UseEffects(false, false, 0.5F)));
     public static final DeferredItem<Item> RIFLE_MAGAZINE = ITEMS.registerItem("rifle_magazine", RifleMagazineItem::new, p -> p.stacksTo(1));
     public static final DeferredItem<Item> LION_PELT = ITEMS.registerSimpleItem("lion_pelt");
     public static final DeferredItem<Item> MOOSE_ANTLERS = ITEMS.registerSimpleItem("moose_antlers");
