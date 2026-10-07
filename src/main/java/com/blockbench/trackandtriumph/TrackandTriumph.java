@@ -2,6 +2,11 @@ package com.blockbench.trackandtriumph;
 
 import org.slf4j.Logger;
 
+import com.blockbench.trackandtriumph.entities.TTEntities;
+import com.blockbench.trackandtriumph.entities.animals.*;
+import com.blockbench.trackandtriumph.items.TTCreativeTabs;
+import com.blockbench.trackandtriumph.items.TTItems;
+
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,6 +20,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -27,10 +33,6 @@ public class TrackandTriumph {
     public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "trackandtriumph" namespace
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "trackandtriumph" namespace
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "trackandtriumph" namespace
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -40,10 +42,10 @@ public class TrackandTriumph {
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
-        CREATIVE_MODE_TABS.register(modEventBus);
+        TTItems.register(modEventBus);
+        TTCreativeTabs.register(modEventBus);
+        TTEntities.register(modEventBus);
+        modEventBus.addListener(this::registerEntityAttributes);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (TrackandTriumph) to respond directly to events.
@@ -65,6 +67,19 @@ public class TrackandTriumph {
         LOGGER.info("{}{}", Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt());
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
+    }
+
+    private void registerEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(TTEntities.BEAR.get(), Bear.createAttributes().build());
+        event.put(TTEntities.BOAR.get(), Boar.createAttributes().build());
+        event.put(TTEntities.CAPE_BUFFALO.get(), CapeBuffalo.createAttributes().build());
+        event.put(TTEntities.DEER.get(), Deer.createAttributes().build());
+        event.put(TTEntities.ELEPHANT.get(), Elephant.createAttributes().build());
+        event.put(TTEntities.ELK.get(), Elk.createAttributes().build());
+        event.put(TTEntities.LION.get(), Lion.createAttributes().build());
+        event.put(TTEntities.MOOSE.get(), Moose.createAttributes().build());
+        event.put(TTEntities.RHINO.get(), Rhino.createAttributes().build());
+        event.put(TTEntities.TIGER.get(), Tiger.createAttributes().build());
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

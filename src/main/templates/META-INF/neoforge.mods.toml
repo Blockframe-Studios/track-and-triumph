@@ -85,3 +85,10 @@ Example mod description.
 # stop your mod loading on the server for example.
 #[features.${mod_id}]
 #openGLVersion="[3.2,)"
+
+[[dependencies.${mod_id}]]
+    modId="geckolib"
+    type="required"
+    versionRange="[${geckolib_version},)"
+    ordering="AFTER"
+    side="BOTH"

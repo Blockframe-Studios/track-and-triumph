@@ -1,6 +1,17 @@
 package com.blockbench.trackandtriumph;
 
+import java.util.function.Supplier;
+
+import com.blockbench.trackandtriumph.entities.TTEntities;
+import com.blockbench.trackandtriumph.entities.animals.TTAnimal;
+
+import com.blockbench.trackandtriumph.client.TTAnimalModel;
+
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.entity.EntityType;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import software.bernie.geckolib.renderer.GeoEntityRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -20,6 +31,25 @@ public class TrackandTriumphClient {
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
         // Do not forget to add translations for your config options to the en_us.json file.
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+    }
+
+    @SubscribeEvent
+    static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        registerGeoRenderer(event, TTEntities.BEAR);
+        registerGeoRenderer(event, TTEntities.BOAR);
+        registerGeoRenderer(event, TTEntities.CAPE_BUFFALO);
+        registerGeoRenderer(event, TTEntities.DEER);
+        registerGeoRenderer(event, TTEntities.ELEPHANT);
+        registerGeoRenderer(event, TTEntities.ELK);
+        registerGeoRenderer(event, TTEntities.LION);
+        registerGeoRenderer(event, TTEntities.MOOSE);
+        registerGeoRenderer(event, TTEntities.RHINO);
+        registerGeoRenderer(event, TTEntities.TIGER);
+    }
+
+    // Assets are looked up by registry name (plus _baby for babies): geo/entity/<id>.geo.json, animations/entity/<id>.animation.json, textures/entity/<id>.png
+    private static <T extends TTAnimal> void registerGeoRenderer(EntityRenderersEvent.RegisterRenderers event, Supplier<EntityType<T>> type) {
+        event.registerEntityRenderer(type.get(), context -> new GeoEntityRenderer<>(context, new TTAnimalModel<>(BuiltInRegistries.ENTITY_TYPE.getKey(type.get()))));
     }
 
     @SubscribeEvent
