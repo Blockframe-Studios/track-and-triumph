@@ -43,6 +43,9 @@ public class TTItems {
     public static final DeferredItem<Item> RIFLE_STOCK = ITEMS.registerSimpleItem("rifle_stock");
     public static final DeferredItem<Item> RIFLE_TRIGGER = ITEMS.registerSimpleItem("rifle_trigger");
     public static final DeferredItem<Item> RIFLE_MAGAZINE = ITEMS.registerItem("rifle_magazine", RifleMagazineItem::new, p -> p.stacksTo(1));
+    public static final DeferredItem<Item> MAGAZINE_FOLLOWER = ITEMS.registerSimpleItem("magazine_follower");
+    public static final DeferredItem<Item> MAGAZINE_SHELL = ITEMS.registerSimpleItem("magazine_shell");
+    public static final DeferredItem<Item> MAGAZINE_SPRING = ITEMS.registerSimpleItem("magazine_spring");
     public static final DeferredItem<Item> LION_PELT = ITEMS.registerSimpleItem("lion_pelt");
     public static final DeferredItem<Item> MOOSE_ANTLERS = ITEMS.registerSimpleItem("moose_antlers");
     public static final DeferredItem<Item> RAW_BEAR_MEAT = ITEMS.registerSimpleItem("raw_bear_meat", p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).build()));

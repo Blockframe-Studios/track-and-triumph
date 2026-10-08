@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "F",
+    "S",
+    "H"
+  ],
+  "key": {
+    "F": "trackandtriumph:magazine_follower",
+    "S": "trackandtriumph:magazine_spring",
+    "H": "trackandtriumph:magazine_shell"
+  },
+  "result": {
+    "id": "trackandtriumph:rifle_magazine",
+    "count": 1
+  }
+}
