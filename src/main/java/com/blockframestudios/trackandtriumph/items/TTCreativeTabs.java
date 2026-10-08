@@ -6,7 +6,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.SpawnEggItem;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -23,5 +25,15 @@ public class TTCreativeTabs {
 
     public static void register(IEventBus modEventBus) {
         CREATIVE_MODE_TABS.register(modEventBus);
+        modEventBus.addListener(TTCreativeTabs::addSpawnEggs);
+    }
+
+    private static void addSpawnEggs(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            TTItems.ITEMS.getEntries().stream()
+                    .map(DeferredHolder::get)
+                    .filter(item -> item instanceof SpawnEggItem)
+                    .forEach(event::accept);
+        }
     }
 }
