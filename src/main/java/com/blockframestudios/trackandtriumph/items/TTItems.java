@@ -49,7 +49,9 @@ public class TTItems {
     public static final DeferredItem<Item> RAW_BOAR_MEAT = ITEMS.registerSimpleItem("raw_boar_meat", p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).build()));
     public static final DeferredItem<Item> RAW_VENISON = ITEMS.registerSimpleItem("raw_venison", p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).build()));
     public static final DeferredItem<Item> RHINO_HORN = ITEMS.registerSimpleItem("rhino_horn");
+    public static final DeferredItem<Item> RIFLE_BULLET = ITEMS.registerSimpleItem("rifle_bullet");
     public static final DeferredItem<Item> RIFLE_ROUND = ITEMS.registerSimpleItem("rifle_round");
+    public static final DeferredItem<Item> SHELL_CASING = ITEMS.registerSimpleItem("shell_casing");
     public static final DeferredItem<Item> TIGER_PELT = ITEMS.registerSimpleItem("tiger_pelt");
     public static final DeferredItem<Item> VENISON_JERKY = ITEMS.registerSimpleItem("venison_jerky", p -> p.food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build()));
 

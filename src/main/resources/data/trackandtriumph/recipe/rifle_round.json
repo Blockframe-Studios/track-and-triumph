@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "B",
+    "P",
+    "S"
+  ],
+  "key": {
+    "B": "trackandtriumph:rifle_bullet",
+    "P": "minecraft:gunpowder",
+    "S": "trackandtriumph:shell_casing"
+  },
+  "result": {
+    "id": "trackandtriumph:rifle_round",
+    "count": 1
+  }
+}
