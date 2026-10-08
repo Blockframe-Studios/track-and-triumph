@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " S ",
+    "PBR",
+    "TXG"
+  ],
+  "key": {
+    "S": "trackandtriumph:rifle_scope",
+    "P": "trackandtriumph:firing_pin",
+    "B": "trackandtriumph:rifle_bolt",
+    "R": "trackandtriumph:rifle_barrel",
+    "T": "trackandtriumph:rifle_stock",
+    "G": "trackandtriumph:rifle_grip",
+    "X": "trackandtriumph:rifle_trigger"
+  },
+  "result": {
+    "id": "trackandtriumph:hunting_rifle",
+    "count": 1
+  }
+}

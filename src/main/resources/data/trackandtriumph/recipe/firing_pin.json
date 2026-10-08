@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "IAI"
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "A": "minecraft:gold_ingot"
+  },
+  "result": {
+    "id": "trackandtriumph:firing_pin",
+    "count": 1
+  }
+}

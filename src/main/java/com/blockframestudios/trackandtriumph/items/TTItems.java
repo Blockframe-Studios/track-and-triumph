@@ -35,6 +35,13 @@ public class TTItems {
     public static final DeferredItem<Item> HUNTING_KNIFE = ITEMS.registerSimpleItem("hunting_knife", p -> p.stacksTo(1));
     public static final DeferredItem<Item> HUNTING_RIFLE = ITEMS.registerItem("hunting_rifle", HuntingRifleItem::new,
             p -> p.stacksTo(1).component(DataComponents.USE_EFFECTS, new UseEffects(false, false, 0.5F)));
+    public static final DeferredItem<Item> FIRING_PIN = ITEMS.registerSimpleItem("firing_pin");
+    public static final DeferredItem<Item> RIFLE_BARREL = ITEMS.registerSimpleItem("rifle_barrel");
+    public static final DeferredItem<Item> RIFLE_BOLT = ITEMS.registerSimpleItem("rifle_bolt");
+    public static final DeferredItem<Item> RIFLE_GRIP = ITEMS.registerSimpleItem("rifle_grip");
+    public static final DeferredItem<Item> RIFLE_SCOPE = ITEMS.registerSimpleItem("rifle_scope");
+    public static final DeferredItem<Item> RIFLE_STOCK = ITEMS.registerSimpleItem("rifle_stock");
+    public static final DeferredItem<Item> RIFLE_TRIGGER = ITEMS.registerSimpleItem("rifle_trigger");
     public static final DeferredItem<Item> RIFLE_MAGAZINE = ITEMS.registerItem("rifle_magazine", RifleMagazineItem::new, p -> p.stacksTo(1));
     public static final DeferredItem<Item> LION_PELT = ITEMS.registerSimpleItem("lion_pelt");
     public static final DeferredItem<Item> MOOSE_ANTLERS = ITEMS.registerSimpleItem("moose_antlers");
