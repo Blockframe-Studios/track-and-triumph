@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 
 import com.blockframestudios.trackandtriumph.entities.TTEntities;
 import com.blockframestudios.trackandtriumph.entities.animals.*;
+import com.blockframestudios.trackandtriumph.gametest.TTGameTests;
 import com.blockframestudios.trackandtriumph.items.TTCreativeTabs;
 import com.blockframestudios.trackandtriumph.items.TTDataComponents;
 import com.blockframestudios.trackandtriumph.items.TTItems;
@@ -51,6 +52,7 @@ public class TrackandTriumph {
         TTItems.register(modEventBus);
         TTCreativeTabs.register(modEventBus);
         TTEntities.register(modEventBus);
+        TTGameTests.register(modEventBus);
         modEventBus.addListener(this::registerEntityAttributes);
         modEventBus.addListener(TTNetworking::registerPayloads);
 
