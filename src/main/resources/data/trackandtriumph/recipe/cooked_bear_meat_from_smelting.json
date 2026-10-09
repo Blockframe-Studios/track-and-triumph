@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": "trackandtriumph:raw_bear_meat",
+  "result": {
+    "id": "trackandtriumph:cooked_bear_meat"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

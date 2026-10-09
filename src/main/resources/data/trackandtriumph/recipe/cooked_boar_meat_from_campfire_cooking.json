@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "ingredient": "trackandtriumph:raw_boar_meat",
+  "result": {
+    "id": "trackandtriumph:cooked_boar_meat"
+  },
+  "experience": 0.35,
+  "cookingtime": 600
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": "trackandtriumph:raw_venison",
+  "result": {
+    "id": "trackandtriumph:cooked_venison"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}
