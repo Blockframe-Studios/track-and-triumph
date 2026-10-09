@@ -5,9 +5,11 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Consumer;
 
 import com.blockframestudios.trackandtriumph.TrackandTriumph;
@@ -182,8 +184,7 @@ public final class TTGameTests {
         Map<String, EntityType<? extends TTAnimal>> animals = animals();
         for (var entry : guaranteedDrops().entrySet()) {
             TTAnimal animal = helper.spawnWithNoFreeWill(animals.get(entry.getKey()), 1, 1, 1);
-            animal.kill(helper.getLevel());
-            int dropped = collectDrops(helper, entry.getValue());
+            int dropped = dropsFromKilling(helper, animal, entry.getValue());
             helper.assertTrue(dropped > 0, "adult " + entry.getKey() + " should always drop " + entry.getValue());
         }
         helper.succeed();
@@ -194,21 +195,28 @@ public final class TTGameTests {
         for (var entry : animals().entrySet()) {
             TTAnimal animal = helper.spawnWithNoFreeWill(entry.getValue(), 1, 1, 1);
             animal.setBaby(true);
-            animal.kill(helper.getLevel());
-            int dropped = collectDrops(helper, null);
+            int dropped = dropsFromKilling(helper, animal, null);
             helper.assertTrue(dropped == 0, "baby " + entry.getKey() + " should drop nothing but dropped " + dropped + " items");
         }
         helper.succeed();
     }
 
     /**
-     * Removes every item entity in the arena (with some slack for bouncing drops) and returns how many items were dropped,
-     * counting only {@code item} when it is given.
+     * Kills {@code animal} and returns how many items it dropped (counting only {@code item} when given), removing those drops.
+     * Only item entities created by the kill are counted: tests run side by side, so other tests' drops may be nearby.
      */
-    private static int collectDrops(GameTestHelper helper, Item item) {
+    private static int dropsFromKilling(GameTestHelper helper, TTAnimal animal, Item item) {
         AABB area = helper.getBounds().inflate(8);
+        Set<Integer> existing = new HashSet<>();
+        for (ItemEntity drop : helper.getLevel().getEntitiesOfClass(ItemEntity.class, area)) {
+            existing.add(drop.getId());
+        }
+        animal.kill(helper.getLevel());
         int total = 0;
         for (ItemEntity drop : helper.getLevel().getEntitiesOfClass(ItemEntity.class, area)) {
+            if (existing.contains(drop.getId())) {
+                continue;
+            }
             if (item == null || drop.getItem().is(item)) {
                 total += drop.getItem().getCount();
             }
